@@ -33,6 +33,7 @@ else
   require('lsp')
   require('lsp.lsp-common').config_all_ls()
   require('lsp.lua-ls')
+  require('lsp.flutter-ls')
   --require('lsp.bash-ls')
   --require('lsp.js-ts-ls')
   --require('lsp.python-ls')

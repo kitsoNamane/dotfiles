@@ -41,7 +41,7 @@ let g:which_key_map['?'] = [ ':NvimTreeFindFile'                               ,
 let g:which_key_map['e'] = [ ':NvimTreeToggle'                                 , 'explorer' ]
 let g:which_key_map['f'] = [ ':Telescope find_files'                           , 'find files' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
-let g:which_key_map['m'] = [ ':MarkdownPreviewToggle'                          , 'markdown preview']
+let g:which_key_map['m'] = [ ':Glow'                                           , 'markdown preview']
 let g:which_key_map['h'] = [ ':let @/ = ""'                                    , 'no highlight' ]
 let g:which_key_map['r'] = [ ':RnvimrToggle'                                   , 'ranger' ]
 " let g:which_key_map['p'] = [ '"0p'                                             , 'paste' ]

@@ -9,6 +9,6 @@
     },
 
     lsp = {
-      on_attach = require('lsp').common_on_attach,
+      on_attach = require('lsp.lsp-common').common_on_attach,
     }
   } -- use defaults
