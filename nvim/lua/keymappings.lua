@@ -16,8 +16,8 @@ vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', { noremap = true, silent = t
 vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', { noremap = true, silent = true })
 
 -- Better nav for omnicomplete
-vim.api.nvim_set_keymap('i', 'inoremap <expr> <c-j> (\"\\<C-n>\")')
-vim.api.nvim_set_keymap('i', 'inoremap <expr> <c-k> (\"\\<C-p>\")')
+vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
+vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 
 -- I hate escape
 vim.api.nvim_set_keymap('i', 'jk', '<ESC>', { noremap = true, silent = true })

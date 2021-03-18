@@ -15,7 +15,7 @@ else
 end
 
 require'lspconfig'.sumneko_lua.setup {
-    on_attach = require'lsp'.common_on_attach,
+    on_attach = require('lsp.lsp-common').common_on_attach,
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     settings = {
         Lua = {

@@ -10,6 +10,7 @@ else
 
   -- Plugins
   require('nv-barbar')
+  require('nv-compe')
   require('nv-colorizer')
   require('nv-comment')
   require('nv-compe')
@@ -21,16 +22,17 @@ else
   require('nv-nvimtree')
   require('nv-quickscope')
   require('nv-telescope')
-  require('nv-treesitter')
+  --require('nv-treesitter')
   require('nv-vim-rooter')
 
   -- Which Key (Hope to replace with Lua plugin someday)
-  --vim.cmd('source ~/.config/nvim/vimscript/nv-whichkey/init.vim')
+  vim.cmd('source ~/.config/nvim/vimscript/nv-whichkey/init.vim')
   --vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
   -- LSP
-  require('lsp').config_all_lsp()
-  --require('lsp.lua-ls')
+  require('lsp')
+  require('lsp.lsp-common').config_all_ls()
+  require('lsp.lua-ls')
   --require('lsp.bash-ls')
   --require('lsp.js-ts-ls')
   --require('lsp.python-ls')

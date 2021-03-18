@@ -74,10 +74,11 @@ return require('packer').startup(function()
   use 'terrortylor/nvim-comment'
   use 'akinsho/nvim-toggleterm.lua'
   use 'voldikss/vim-floaterm'
+  use 'liuchengxu/vim-which-key'
   use 'windwp/nvim-autopairs'
   use 'kevinhwang91/nvim-bqf'
   use 'psliwka/vim-smoothie'
   use 'tpope/vim-sleuth'
   use 'tpope/vim-surround'
-  use 'RRethy/vim-illuminate'
+  --use 'RRethy/vim-illuminate'
 end)
