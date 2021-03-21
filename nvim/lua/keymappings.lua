@@ -15,6 +15,13 @@ vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', { noremap = true, silent = true })
 
+-- Alternate way to save
+-- nnoremap <silent> <C-s> :w<CR>
+-- Alternate way to quit
+-- nnoremap <silent> <C-Q> :wq!<CR>
+vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-q>', ':wq<CR>', { noremap = true, silent = true })
+
 -- Better nav for omnicomplete
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')

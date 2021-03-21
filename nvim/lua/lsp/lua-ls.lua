@@ -19,7 +19,7 @@ require'lspconfig'.sumneko_lua.setup {
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     settings = {
         Lua = {
-            runtime = {
+        runtime = {
                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
                 version = 'LuaJIT',
                 -- Setup your lua path

@@ -1,22 +1,23 @@
--- require'nvim-web-devicons'.setup()
-
-local gl = require('galaxyline')
-local gls = gl.section
-gl.short_line_list = {'LuaTree','vista','dbui'}
 local gl = require('galaxyline')
 -- get my theme in galaxyline repo
 -- local colors = require('galaxyline.theme').default
 local colors = {
-    bg = '#282c34',
-    yellow = '#fabd2f',
-    cyan = '#008080',
+    bg = '#2E2E2E',
+    yellow = '#DCDCAA',
+	dark_yellow = '#D7BA7D',
+    cyan = '#4EC9B0',
     green = '#608B4E',
+    light_green = '#B5CEA8',
+    string_orange = '#CE9178',
     orange = '#FF8800',
     purple = '#C586C0',
-    magenta = '#d16d9e',
-    grey = '#abb2bf',
+    magenta = '#D16D9E',
+    grey = '#858585',
     blue = '#569CD6',
-    red = '#D16969'
+    vivid_blue = '#4FC1FF',
+	light_blue = '#9CDCFE',
+    red = '#D16969',
+	error_red = '#F44747'
 }
 local condition = require('galaxyline.condition')
 local gls = gl.section
@@ -54,11 +55,13 @@ gls.left[1] = {
         highlight = {colors.red, colors.bg, 'bold'}
     }
 }
+print(vim.fn.getbufvar(0,'ts'))
+vim.fn.getbufvar(0,'ts')
 
 gls.left[2] = {
     GitIcon = {
         provider = function()
-            return ' '
+            return ' '
         end,
         condition = condition.check_git_workspace,
         separator = ' ',
@@ -71,7 +74,7 @@ gls.left[3] = {
     GitBranch = {
         provider = 'GitBranch',
         condition = condition.check_git_workspace,
-        separator = '',
+        separator = ' ',
         separator_highlight = {'NONE', colors.bg},
         highlight = {colors.grey, colors.bg, 'bold'}
     }
@@ -90,7 +93,7 @@ gls.left[5] = {
         provider = 'DiffModified',
         condition = condition.hide_in_width,
         icon = ' 柳',
-        highlight = {colors.orange, colors.bg}
+        highlight = {colors.blue, colors.bg}
     }
 }
 gls.left[6] = {
@@ -106,14 +109,14 @@ gls.right[1] = {
     DiagnosticError = {
         provider = 'DiagnosticError',
         icon = '  ',
-        highlight = {colors.red, colors.bg}
+        highlight = {colors.error_red, colors.bg}
     }
 }
 gls.right[2] = {
     DiagnosticWarn = {
         provider = 'DiagnosticWarn',
         icon = '  ',
-        highlight = {colors.yellow, colors.bg}
+        highlight = {colors.orange, colors.bg}
     }
 }
 

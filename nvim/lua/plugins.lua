@@ -41,13 +41,14 @@ return require('packer').startup(function()
   --  Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'
+  use 'nvim-treesitter/nvim-treesitter-refactor'
   use 'p00f/nvim-ts-rainbow'
   --
   --  Icons
   use 'kyazdani42/nvim-web-devicons'
 
 
- -- Status Line and Bufferline
+  -- Status Line and Bufferline
   use 'glepnir/galaxyline.nvim'
   -- use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
   use 'romgrk/barbar.nvim'
@@ -80,5 +81,4 @@ return require('packer').startup(function()
   use 'psliwka/vim-smoothie'
   use 'tpope/vim-sleuth'
   use 'tpope/vim-surround'
-  --use 'RRethy/vim-illuminate'
 end)

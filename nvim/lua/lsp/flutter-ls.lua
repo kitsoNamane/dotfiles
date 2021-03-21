@@ -3,7 +3,7 @@
     experimental = {
       derive_lsp_paths = true,
     },
-    flutter_outline = {
+    widget_outline = {
         highlight = "NonText",
         enabled = true,
     },

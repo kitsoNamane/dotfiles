@@ -13,7 +13,6 @@ else
   require('nv-compe')
   require('nv-colorizer')
   require('nv-comment')
-  require('nv-compe')
   require('nv-floaterm')
   require('nv-galaxyline')
   require('nv-gitsigns')
@@ -22,7 +21,7 @@ else
   require('nv-nvimtree')
   require('nv-quickscope')
   require('nv-telescope')
-  --require('nv-treesitter')
+  require('nv-treesitter')
   require('nv-vim-rooter')
 
   -- Which Key (Hope to replace with Lua plugin someday)
@@ -30,10 +29,10 @@ else
   --vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
   -- LSP
-  require('lsp')
   require('lsp.lsp-common').config_all_ls()
   require('lsp.lua-ls')
   require('lsp.flutter-ls')
+  require('lsp.sql-ls')
   --require('lsp.bash-ls')
   --require('lsp.js-ts-ls')
   --require('lsp.python-ls')
