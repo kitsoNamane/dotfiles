@@ -21,9 +21,7 @@ sudo apt install zsh -y
 chsh -s /usr/bin/zsh
 
 # install brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# add brew to system path
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 #TODO copy configurations files 
