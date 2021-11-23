@@ -1,6 +1,3 @@
-local saga = require 'lspsaga'
-saga.init_lsp_saga()
-
 local lsp_config = {}
 function lsp_config.common_on_attach(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -12,25 +9,25 @@ function lsp_config.common_on_attach(client, bufnr)
   local opts = { noremap=true, silent=true }
 
   -- Definition and Reference
-  buf_set_keymap('n', 'gr', "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>", opts)
+  --buf_set_keymap('n', 'gr', "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>", opts)
 
   -- Hover Doc
-  buf_set_keymap('n', 'K', "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
-  buf_set_keymap('n', '<C-f>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
-  buf_set_keymap('n', '<C-b>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", opts)
+  --buf_set_keymap('n', 'K', "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
+  --buf_set_keymap('n', '<C-f>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
+  --buf_set_keymap('n', '<C-b>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", opts)
 
 
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 
   -- Signature Help
-  buf_set_keymap('n', 'gs', "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>", opts)
+  --buf_set_keymap('n', 'gs', "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>", opts)
 
   -- Rename
   -- ctrl + F2
-  buf_set_keymap('n', '<F26>', "<cmd>lua require('lspsaga.rename').rename()<CR>", opts)
+  --buf_set_keymap('n', '<F26>', "<cmd>lua require('lspsaga.rename').rename()<CR>", opts)
 
   -- Definition Preview
-  buf_set_keymap('n', 'gd', "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>", opts)
+  --buf_set_keymap('n', 'gd', "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>", opts)
 
   buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
@@ -38,11 +35,11 @@ function lsp_config.common_on_attach(client, bufnr)
   buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 
   -- CodeAction
-  buf_set_keymap('n', 'ca', "<cmd>lua require('lspsaga.codeaction').code_action()<CR>", opts)
+  --buf_set_keymap('n', 'ca', "<cmd>lua require('lspsaga.codeaction').code_action()<CR>", opts)
   buf_set_keymap('v', 'ca', "<cmd>'<,'>lua require('lspsaga.codeaction').range_code_action()<CR>", opts)
 
   -- Show and Jump Diagnostics
-  buf_set_keymap('n', '<leader>e', "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>", opts)
+  --buf_set_keymap('n', '<leader>e', "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>", opts)
 
 
   buf_set_keymap('n', '[e', "<leader>e require('lspsaga.diagnostic').lsp_jump_diagnostic_prev()<CR>", opts)
@@ -102,21 +99,21 @@ function lsp_config.common_on_attach(client, bufnr)
     }
   )
 
-
   require('nv-lspkind')
 end
 
 function lsp_config.config_all_ls()
   local nvim_lsp = require('lspconfig')
   local servers = {
-    'kotlin_language_server',
-    'angularls', 'pyright',
-    'gopls', 'clangd', 'dartls',
-    'html', 'cssls', 'intelephense',
-    'solargraph', 'texlab',
-    'tsserver', 'vimls',
-    'clangd', 'bashls',
-    'yamlls', 'dockerls',
+    --'kotlin_language_server',
+    --'angularls', 'pyright',
+    --'gopls', 'clangd', 'dartls',
+    --'html', 'cssls', 'intelephense',
+    --'solargraph', 'texlab',
+    --'tsserver', 'vimls',
+    --'clangd', 'bashls',
+    --'yamlls', 'dockerls',
+    'vimls', 'bashls',
   }
 
   for _, lsp in ipairs(servers) do
