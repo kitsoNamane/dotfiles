@@ -5,6 +5,6 @@ else
   require('plugins')
   require('kit-cmp')
   -- LSP
-  require('lsp.lsp-common').config_all_ls()
-  require('lsp.lua-ls')
+  --require('lsp.lsp-common').config_all_ls()
+  --require('lsp.lua-ls')
 end

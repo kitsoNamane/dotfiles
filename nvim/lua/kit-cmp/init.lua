@@ -1,5 +1,7 @@
-local cmp = require('cmp')
 local lspkind = require('lspkind')
+lspkind.init()
+
+local cmp = require('cmp')
 
 cmp.setup({
   sources = {
@@ -18,11 +20,11 @@ cmp.setup({
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-e>"] = cmp.mapping.close(),
-    ["<C-y>"] = cmp.mapping.confirm {
+    ["<C-o>"] = cmp.mapping.complete(),
+    ["<CR>"] = cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Insert,
         select = true,
     },
-    ["<c-space>"] = cmp.mapping.complete(),
   },
 
   snippet = {
@@ -50,3 +52,4 @@ cmp.setup({
     ghost_text = true,
   },
 })
+vim.api.nvim_command("autocmd FileType lua lua require'cmp'.setup.buffer{sources = {{ name = 'nvim_lua' }, { name = 'buffer' }}}")
