@@ -1,21 +1,13 @@
--- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
-USER = vim.fn.expand('$USER')
 
-local sumneko_root_path = ""
-local sumneko_binary = ""
+local sumneko_root_path = "/home/kitso/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin/Linux"
+local sumneko_binary = "/home/kitso/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin/Linux/lua-language-server"
 
-if vim.fn.has("mac") == 1 then
-    sumneko_root_path = "/Users/" .. USER .. "/.config/nvim/ls/lua-language-server"
-    sumneko_binary = "/Users/" .. USER .. "/.config/nvim/ls/lua-language-server/bin/macos/lua-language-server"
-elseif vim.fn.has("unix") == 1 then
-    sumneko_root_path = "/home/" .. USER .. "/.config/nvim/ls/lua-language-server"
-    sumneko_binary = "/home/" .. USER .. "/.config/nvim/ls/lua-language-server/bin/linux/lua-language-server"
-else
-    print("Unsupported system for sumneko")
-end
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 require'lspconfig'.sumneko_lua.setup {
-    on_attach = require('lsp.lsp-common').common_on_attach,
+    capabilities = capabilities,
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     settings = {
         Lua = {
@@ -27,7 +19,7 @@ require'lspconfig'.sumneko_lua.setup {
             },
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
-                globals = {'vim'}
+                globals = {'vim', 'use'}
             },
             workspace = {
                 -- Make the server aware of Neovim runtime files

@@ -1,3 +1,42 @@
+--local use = require('packer').use
+--require('packer').startup(function()
+--  use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
+--  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+--  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+--  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+--  use 'L3MON4D3/LuaSnip' -- Snippets plugin
+--end)
+
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+local nvim_lsp = require('lspconfig')
+
+-- Enable some language servers with the additional completion capabilities offered by nvim-cmp
+local servers = {
+  'jsonls',
+  'gopls',
+  'html',
+  'bashls',
+  'dockerls',
+  'jdtls',
+  'kotlin_language_server',
+  'pyright',
+}
+
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    -- on_attach = my_custom_on_attach,
+    capabilities = capabilities,
+  }
+end
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
+
+-- luasnip setup
+-- local luasnip = require 'luasnip'
+
+-- nvim-cmp setup
 local lspkind = require('lspkind')
 require('lspkind').init({
    with_text = true,
@@ -38,10 +77,10 @@ cmp.setup({
   sources = {
     --{ name = 'gh_issues' },
     { name = 'nvim_lua' },
-
+    { name = 'emoji' },
     { name = 'nvim_lsp' },
     { name = 'path' },
-    { name = 'luasnip' },
+    --{ name = 'luasnip' },
     -- keyword_length will only trigger completion when typed letters equal the
     -- length set below.
     { name = 'buffer', keyword_length = 3 },
@@ -59,9 +98,9 @@ cmp.setup({
   },
 
   snippet = {
-    expand = function (args)
-      require("luasnip").lsp_expand(args.body)
-    end,
+  --  expand = function (args)
+  --    require("luasnip").lsp_expand(args.body)
+  --  end,
   },
 
   formatting = {

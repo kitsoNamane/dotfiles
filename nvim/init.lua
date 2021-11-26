@@ -3,11 +3,12 @@ if vim.g.vscode then
   require('settings')
 else
   require('plugins')
-  require('keymappings')
+  require('key-mappings')
+  require('plugin-key-mappings')
   require('settings')
+  require('explorer')
+  require('miscellaneous')
   require('lsp')
+  require('lsp.lua-ls')
   require('theme')
-  -- LSP
-  --require('lsp.lsp-common').config_all_ls()
-  --require('lsp.lua-ls')
 end
