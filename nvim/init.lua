@@ -3,7 +3,10 @@ if vim.g.vscode then
   require('settings')
 else
   require('plugins')
-  require('kit-cmp')
+  require('keymappings')
+  require('settings')
+  require('lsp')
+  require('theme')
   -- LSP
   --require('lsp.lsp-common').config_all_ls()
   --require('lsp.lua-ls')

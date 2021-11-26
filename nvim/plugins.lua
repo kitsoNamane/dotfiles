@@ -29,8 +29,17 @@ return require('packer').startup(function()
   use 'onsails/lspkind-nvim'
   --use "saadparwaiz1/cmp_luasnip"
 
+  --  Icons
+  use 'kyazdani42/nvim-web-devicons'
+
   -- Status Line and Bufferline
-  use 'glepnir/galaxyline.nvim'
+  use {
+  'glepnir/galaxyline.nvim',
+    branch = 'main',
+    -- config = function() require'my_statusline' end,
+    -- some optional icons
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
   use 'romgrk/barbar.nvim'
   use 'ojroques/nvim-bufdel'
 
@@ -45,6 +54,7 @@ return require('packer').startup(function()
   -- Color
   use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'norcalli/nvim-colorizer.lua'
-  --  Icons
-  use 'kyazdani42/nvim-web-devicons'
+  use 'tjdevries/colorbuddy.nvim'
+  use 'Th3Whit3Wolf/onebuddy'
+  
 end)

@@ -1,5 +1,5 @@
-vim.cmd('set iskeyword+=-')               --treat dash separated words as a word text object"
-vim.cmd('set shortmess+=c')               --Don't pass messages to |ins-completion-menu|.
+vim.opt.iskeyword:append "-"               --treat dash separated words as a word text object"
+vim.opt.shortmess:append "c"               --Don't pass messages to |ins-completion-menu|.
 vim.cmd('set whichwrap+=<,>,[,],h,l')
 vim.cmd('au TextYankPost * lua vim.highlight.on_yank {on_visual = false}')  -- disabled in visual mode
 
