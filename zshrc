@@ -124,9 +124,10 @@ export PATH="$GOBIN:$PATH"
 #-----------------------------------------------------------------------------------------------#
 #################################################################################################
 
-# git-update updates master with upstream changes, and optionally creates a feature branch.
+# git-update updates master/main with upstream changes, and optionally creates a feature branch.
 function git-update() {
-    git checkout master && git pull upstream master && git push origin master
+    local default_br=$(git symbolic-ref refs/remotes/origin/HEAD | cut -d '/' -f4)
+    git checkout ${default_br} && git pull upstream ${default_br} && git push origin ${default_br}
 
     local br=${1}
     if [[ $br != "" ]]; then
@@ -143,7 +144,8 @@ function git-update() {
 # Note: if there's a merge conflict, after handling the merge conflict,
 # you need to finish by running git-rebase-finish.
 function git-rebase() {
-    local to=${1:-master}
+    local default_br = $(git symbolic-ref refs/remotes/origin/HEAD | cut -d '/' -f4)
+    local to=${1:-default_br}
     local args=${@:2}
     local br=$(git branch --show-current)
     local br_base=${br}_base
