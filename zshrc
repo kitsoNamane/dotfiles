@@ -110,15 +110,15 @@ alias bin="cd ${HOME}/Documents/bin && ls"
 export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
 export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
 export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
-export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"
+export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
 
 export GOROOT="$HOME/.golang/go"
-export PATH="$PATH:$GOROOT/bin"
+export PATH="$GOROOT/bin:$PATH"
 export GOPATH="$HOME/.golang"
 export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$GOBIN"
+export PATH="$GOBIN:$PATH"
 
 #################################################################################################
 #-----------------------------------------------------------------------------------------------#
