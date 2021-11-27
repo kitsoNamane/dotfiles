@@ -13,7 +13,9 @@ return require('packer').startup(function()
 
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
-
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+  use "rafamadriz/friendly-snippets"
   -- Information
   use 'nanotee/nvim-lua-guide'
 

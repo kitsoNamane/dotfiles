@@ -77,6 +77,7 @@ cmp.setup({
   sources = {
     --{ name = 'gh_issues' },
     { name = 'nvim_lua' },
+    { name = 'vsnip' },
     { name = 'emoji' },
     { name = 'nvim_lsp' },
     { name = 'path' },
@@ -98,9 +99,9 @@ cmp.setup({
   },
 
   snippet = {
-  --  expand = function (args)
-  --    require("luasnip").lsp_expand(args.body)
-  --  end,
+    expand = function (args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
   },
 
   formatting = {
