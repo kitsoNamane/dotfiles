@@ -10,26 +10,50 @@
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-local nvim_lsp = require('lspconfig')
+--local nvim_lsp = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {
-  'jsonls',
-  'gopls',
-  'html',
-  'bashls',
-  'dockerls',
-  'jdtls',
-  'kotlin_language_server',
-  'pyright',
-}
+--local servers = {
+--  'jsonls',
+--  'gopls',
+--  'html',
+--  'bashls',
+--  'dockerls',
+--  'jdtls',
+--  'kotlin_language_server',
+--  'pyright',
+--}
 
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+--for _, lsp in ipairs(servers) do
+--  nvim_lsp[lsp].setup {
+--    on_attach = require('lsp.config').on_attach,
+--    capabilities = capabilities,
+--  }
+--end
+--
+
+local lsp_installer = require("nvim-lsp-installer")
+
+-- Register a handler that will be called for all installed servers.
+-- Alternatively, you may also register handlers on specific server instances instead (see example below).
+lsp_installer.on_server_ready(function(server)
+  local opts = {
     on_attach = require('lsp.config').on_attach,
     capabilities = capabilities,
   }
-end
+
+  -- (optional) Customize the options passed to the server
+  -- if server.name == "tsserver" then
+  --     opts.root_dir = function() ... end
+  -- end
+
+  -- This setup() function is exactly the same as lspconfig's setup function.
+  -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+  server:setup(opts)
+end)
+
+
+
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
