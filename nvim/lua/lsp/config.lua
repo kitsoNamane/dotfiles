@@ -30,6 +30,11 @@ function lsp_config.on_attach(client, bufnr)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
+  end
+
+function lsp_config.capabilities()
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
   -- Set some keybinds conditional on server capabilities
   if client.resolved_capabilities.document_formatting then
       buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)

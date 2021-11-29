@@ -8,7 +8,6 @@ else
   require('settings')
   require('explorer')
   require('miscellaneous')
-  --require('lsp.lua-ls')
   require('lsp')
   require('theme')
 end
