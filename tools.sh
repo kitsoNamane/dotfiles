@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 
 # modern unix tools
@@ -22,6 +22,6 @@ brew install jesseduffield/lazygit/lazygit jesseduffield/lazydocker/lazydocker
 
 brew install yolossn/tap/lazykubernetes
 
-brew install --HEAD universal-ctags/universat-ctags/universal-ctags
+brew install universal-ctags
 
 brew install bat 

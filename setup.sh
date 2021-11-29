@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # Update the apt package index and upgrade system.
 sudo apt update
@@ -14,14 +14,20 @@ sudo apt install \
 
 sudo apt install build-essential git -y
 
+sudo apt install curl timeshift -y
+
 # install zsh
 sudo apt install zsh -y
 
 # set zsh as the default shell
 chsh -s /usr/bin/zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# install gnome-tweaks
+sudo apt install gnome-tweaks
 
 # install brew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 #TODO copy configurations files 

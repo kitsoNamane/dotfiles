@@ -114,14 +114,14 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PAT
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
 
-export GOROOT="$HOME/.golang/go"
-export PATH="$GOROOT/bin:$PATH"
+#export GOROOT="$HOME/.golang/go"
+#export PATH="$GOROOT/bin:$PATH"
 export GOPATH="$HOME/.golang"
-export GOBIN="$GOPATH/bin"
-export PATH="$GOBIN:$PATH"
+export GOBIN="/home/linuxbrew/.linuxbrew/bin"
+#export PATH="$GOBIN:$PATH"
 
 #################################################################################################
-#-----------------------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------------------------------------------------------------------------#
 #################################################################################################
 
 # git-update updates master/main with upstream changes, and optionally creates a feature branch.
@@ -166,18 +166,11 @@ function git-rebase-finish() {
     git checkout ${br_base} && git reset --hard ${to} && git checkout ${br}
 }
 
-#################################################################################################
-#-----------------------------------------------------------------------------------------------#
-#################################################################################################
+# Do not edit, written by devtools script
+eval "$(pyenv init -)"
+export NVM_DIR=/home/kitso/.nvm
+[ -s /home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh ] && . /home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh  # This loads nvm
+[ -s /home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm ] && . /home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm
+source /home/kitso/.cargo/env
 
-# Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion 
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/kitso/.sdkman"
-[[ -s "/home/kitso/.sdkman/bin/sdkman-init.sh" ]] && source "/home/kitso/.sdkman/bin/sdkman-init.sh"
-
-#export STARSHIP_CONFIG=~/Dropbox/dotfiles/starship.toml
-#eval "$(starship init zsh)"
+export PATH="$PATH:$HOME/.flutter/flutter/bin"
