@@ -1,6 +1,7 @@
 #!/bin/bash
 
-
+sudo apt remove git
+brew install git
 # modern unix tools
 brew install exa bat lsd delta
 brew install dust duf broot fd

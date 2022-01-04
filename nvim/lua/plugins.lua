@@ -43,25 +43,30 @@ return require('packer').startup(function()
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require'nvim-tree'.setup {} end
+  --  config = function() require'nvim-tree'.setup {} end
   }
+
+  use 'chipsenkbeil/distant.nvim'
 
   --  Debugging
   use 'mfussenegger/nvim-dap'
+
+  -- Advanced LSP
+  use 'simrat39/rust-tools.nvim'
+  use 'akinsho/flutter-tools.nvim'
 
   --  Icons
   use 'kyazdani42/nvim-web-devicons'
 
   -- Status Line and Bufferline
   use {
-  'glepnir/galaxyline.nvim',
-    branch = 'main',
-    -- config = function() require'my_statusline' end,
-    -- some optional icons
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   use 'romgrk/barbar.nvim'
   use 'ojroques/nvim-bufdel'
+
+  use 'f-person/git-blame.nvim'
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
@@ -72,5 +77,6 @@ return require('packer').startup(function()
   use 'tjdevries/colorbuddy.nvim'
   use 'Th3Whit3Wolf/onebuddy'
   use 'windwp/nvim-autopairs'
+  use 'olimorris/onedarkpro.nvim'
   
 end)

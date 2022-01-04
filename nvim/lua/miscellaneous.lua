@@ -1,4 +1,4 @@
-require('nvim-autopairs').setup()
+--require('nvim-autopairs').setup()
 
 local pairs_map = {
     ["'"] = "'",
@@ -36,6 +36,7 @@ MUtils.completion_confirm=function()
     return npairs.check_break_line_char()
   end
 end
+npairs.setup()
 
 
 remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
@@ -99,3 +100,8 @@ require('telescope').setup{
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   }
 }
+
+vim.g.gitblame_message_template = "<author> • <date> • <summary>"
+vim.g.gitblame_highlight_group = "LineNr"
+vim.g.gitblame_enabled = 1
+-- <author>, <committer>, <date>, <committer-date>, <summary>, <sha>

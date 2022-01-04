@@ -19,3 +19,6 @@ source $HOME/.zshrc
 flutter
 flutter doctor
 
+curl -s "https://get.sdkman.io" | bash
+echo '[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"' >> $HOME/.zshrc
+

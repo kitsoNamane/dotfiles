@@ -3,18 +3,18 @@ vim.opt.shortmess:append "c"               --Don't pass messages to |ins-complet
 vim.cmd('set whichwrap+=<,>,[,],h,l')
 vim.cmd('au TextYankPost * lua vim.highlight.on_yank {on_visual = false}')  -- disabled in visual mode
 
-vim.o.hidden=true                         --Required to keep multiple buffers open multiple buffers
-vim.bo.expandtab=true                      --Converts tabs to spaces
-vim.bo.tabstop=4                           --Insert 2 spaces for a tab
-vim.bo.softtabstop=4                       --Insert 2 spaces when <TAB> key is pressed
-vim.bo.shiftwidth=4                        --Change the number of space characters inserted for indentation
-vim.o.encoding="utf-8"                    --The encoding displayed
-vim.o.pumheight=10                        --Makes popup menu smaller
-vim.o.fileencoding="utf-8"                --The encoding written to file
-vim.o.ruler=true              		        -- Show the cursor position all the time
-vim.o.cmdheight=2                         --More space for displaying messages
-vim.o.mouse="a"                           --Enable your mouse
-vim.o.splitbelow=true                     --Horizontal splits will automatically be below
+vim.opt.hidden=true                         --Required to keep multiple buffers open multiple buffers
+vim.opt.expandtab=true                      --Converts tabs to spaces
+vim.opt.tabstop=4                           --Insert 2 spaces for a tab
+vim.opt.softtabstop=4                       --Insert 2 spaces when <TAB> key is pressed
+vim.opt.shiftwidth=4                        --Change the number of space characters inserted for indentation
+vim.opt.encoding="utf-8"                    --The encoding displayed
+vim.opt.pumheight=10                        --Makes popup menu smaller
+vim.opt.fileencoding="utf-8"                --The encoding written to file
+vim.opt.ruler=true              		        -- Show the cursor position all the time
+vim.opt.cmdheight=2                         --More space for displaying messages
+vim.opt.mouse="a"                           --Enable your mouse
+vim.opt.splitbelow=true                     --Horizontal splits will automatically be below
 vim.go.termguicolors=true
 vim.o.splitright=true                     --Vertical splits will automatically be to the right
 vim.go.t_Co="256"                          --Support 256 colors
@@ -23,6 +23,7 @@ vim.o.smarttab=true                       --Makes tabbing smarter will realize y
 vim.o.smartindent=true                    --Makes indenting smart
 vim.o.autoindent=true                     --Good auto indent
 vim.o.laststatus=2                        --Always display the status line
+
 
 vim.o.cursorline=true                     --Enable highlighting of the current line
 vim.o.background="dark"                   --tell vim what the background color looks like

@@ -23,6 +23,7 @@ echo \
 # Update the apt package index, and install the latest version of Docker Engine and containerd.
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io
+sudo usermod -aG docker $USER # will enable us to run docker without the sudo prefix
 
 # install kubernetes cli
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg

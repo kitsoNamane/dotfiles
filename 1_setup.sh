@@ -6,7 +6,7 @@ sudo apt upgrade
 
 # Update the apt package index, and install the latest version of Docker Engine and containerd.
 sudo apt install \
-    apt-transport-https \ # allow apt to download over https
+    apt-transport-https \
     ca-certificates \
     curl \
     gnupg \
@@ -30,4 +30,3 @@ sudo apt install gnome-tweaks
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-#TODO copy configurations files 
