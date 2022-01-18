@@ -1,43 +1,15 @@
---local use = require('packer').use
---require('packer').startup(function()
---  use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
---  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
---  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
---  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
---  use 'L3MON4D3/LuaSnip' -- Snippets plugin
---end)
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
---local nvim_lsp = require('lspconfig')
 
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
---local servers = {
---  'jsonls',
---  'gopls',
---  'html',
---  'bashls',
---  'dockerls',
---  'jdtls',
---  'kotlin_language_server',
---  'pyright',
---}
-
---for _, lsp in ipairs(servers) do
---  nvim_lsp[lsp].setup {
---    on_attach = require('lsp.config').on_attach,
---    capabilities = capabilities,
---  }
---end
---
 local lsp_installer = require("nvim-lsp-installer")
 
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
   local opts = {
-    on_attach = require('lsp.config').on_attach,
-    capabilities = capabilities,
+    on_attach = require('lsp.handlers').on_attach,
+    capabilities = require('lsp.handlers').capabilities,
   }
 
   -- (optional) Customize the options passed to the server
@@ -155,3 +127,5 @@ cmp.setup({
     ghost_text = true,
   },
 })
+
+require("lsp.handlers").setup()

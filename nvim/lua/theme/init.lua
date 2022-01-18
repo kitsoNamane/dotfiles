@@ -29,6 +29,7 @@ onedarkpro.load()
 vim.cmd('au TextYankPost * lua vim.highlight.on_yank {on_visual = false}')  -- disabled in visual mode
 
 require('theme.statusline')
+require('theme.bufferline')
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages

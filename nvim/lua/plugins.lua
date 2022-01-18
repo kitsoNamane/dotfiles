@@ -21,6 +21,8 @@ return require('packer').startup(function()
 
   -- Quality of life improvements
   use 'norcalli/nvim_utils'
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
   -- LSP
   use {
@@ -64,6 +66,7 @@ return require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   use 'romgrk/barbar.nvim'
+  use 'akinsho/bufferline.nvim'
   use 'ojroques/nvim-bufdel'
 
   use 'f-person/git-blame.nvim'
